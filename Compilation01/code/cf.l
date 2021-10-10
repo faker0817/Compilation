@@ -43,12 +43,11 @@ ID [A-Za-z_][A-Za-z0-9_]*
 " " {col += 1;}
 "//" {
 	printf("NOTE at line %d,char %d: %s", yylineno, col, yytext); 
-	char c; 
-	while(true) 
+	char c = input(); 
+	while(c != '\n' && c != EOF) 
 	{
+		printf("%c",c); 
 		c = input();
-		if(c != '\n' && c != EOF) printf("%c",c); 
-		else break;
 	}
 	printf("\n"); col=1;
 }

@@ -851,19 +851,18 @@ YY_RULE_SETUP
 #line 44 "cf.l"
 {
 	printf("NOTE at line %d,char %d: %s", yylineno, col, yytext); 
-	char c; 
-	while(true) 
+	char c = input(); 
+	while(c != '\n' && c != EOF) 
 	{
+		printf("%c",c); 
 		c = input();
-		if(c != '\n' && c != EOF) printf("%c",c); 
-		else break;
 	}
 	printf("\n"); col=1;
 }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 55 "cf.l"
+#line 54 "cf.l"
 {
 	char content[100];
 	char c = input();
@@ -894,181 +893,181 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 82 "cf.l"
+#line 81 "cf.l"
 {printf("SEMI at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 83 "cf.l"
+#line 82 "cf.l"
 {printf("COMMA at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 84 "cf.l"
+#line 83 "cf.l"
 {printf("ASSIGNOP at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 85 "cf.l"
+#line 84 "cf.l"
 {printf("RELOP at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 86 "cf.l"
+#line 85 "cf.l"
 {printf("PLUS at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 87 "cf.l"
+#line 86 "cf.l"
 {printf("MINUS at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 88 "cf.l"
+#line 87 "cf.l"
 {printf("STAR at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 89 "cf.l"
+#line 88 "cf.l"
 {printf("DIV at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 90 "cf.l"
+#line 89 "cf.l"
 {printf("AND at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 91 "cf.l"
+#line 90 "cf.l"
 {printf("OR at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 92 "cf.l"
+#line 91 "cf.l"
 {printf("DOT at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 93 "cf.l"
+#line 92 "cf.l"
 {printf("NOT at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 94 "cf.l"
+#line 93 "cf.l"
 {printf("TYPE at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 95 "cf.l"
+#line 94 "cf.l"
 {printf("LP at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 96 "cf.l"
+#line 95 "cf.l"
 {printf("RP at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 97 "cf.l"
+#line 96 "cf.l"
 {printf("LB at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 98 "cf.l"
+#line 97 "cf.l"
 {printf("RB at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 99 "cf.l"
+#line 98 "cf.l"
 {printf("LC at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 100 "cf.l"
+#line 99 "cf.l"
 {printf("RC at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 101 "cf.l"
+#line 100 "cf.l"
 {printf("STRUCT at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 102 "cf.l"
+#line 101 "cf.l"
 {printf("RETURN at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 103 "cf.l"
+#line 102 "cf.l"
 {printf("IF at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 104 "cf.l"
+#line 103 "cf.l"
 {printf("ELSE at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 105 "cf.l"
+#line 104 "cf.l"
 {printf("WHILE at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 106 "cf.l"
+#line 105 "cf.l"
 { printf("INT data at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 107 "cf.l"
+#line 106 "cf.l"
 { printf("INT8 at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 108 "cf.l"
+#line 107 "cf.l"
 { printf("FLOAT at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 109 "cf.l"
+#line 108 "cf.l"
 { printf("INT16 at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 110 "cf.l"
+#line 109 "cf.l"
 { printf("Error Type A at line %d,char %d: Illegal hexadecimal number: '%s'\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 111 "cf.l"
+#line 110 "cf.l"
 { printf("Error Type A at line %d,char %d: Illegal octal number: '%s'\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 112 "cf.l"
+#line 111 "cf.l"
 { printf("Error Type A at line %d,char %d: Illegal float number: '%s'\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 113 "cf.l"
+#line 112 "cf.l"
 {printf("ID at line %d,char %d: %s\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 37:
 /* rule 37 can match eol */
 YY_RULE_SETUP
-#line 114 "cf.l"
+#line 113 "cf.l"
 {col = 1;}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 115 "cf.l"
+#line 114 "cf.l"
 {printf("Error Type A at line %d,char %d: Myterious character: '%s'\n", yylineno, col, yytext); col+=yyleng;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 117 "cf.l"
+#line 116 "cf.l"
 ECHO;
 	YY_BREAK
-#line 1072 "lex.yy.c"
+#line 1071 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2077,7 +2076,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 117 "cf.l"
+#line 116 "cf.l"
 
 
 int main(int argc, char* argv[])
